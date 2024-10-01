@@ -1,8 +1,6 @@
 package com.personalproject.EmployeeManagementSystem.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -11,7 +9,6 @@ import java.time.LocalDate;
 @Entity
 public class Employee {
     @Id
-    @GeneratedValue
     private int employeeId;
     @NotBlank(message = "Employee must have a name")
     private String firstName;
