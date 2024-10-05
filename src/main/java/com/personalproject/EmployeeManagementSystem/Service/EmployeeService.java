@@ -16,24 +16,23 @@ public class EmployeeService {
     }
 
     //Methods to call Repository
-    //get all employees
-    public String greeting(){
+    public String greeting(){ //test
         return "Hello world!";
     }
 
-    public List<Employee> getAllEmployees(){
+    public List<Employee> getAllEmployees(){ //get employee list
         return employeeRepository.findAll();
     }
 
-    public Employee getEmployeeById(int employee_id){
+    public Employee getEmployeeById(int employee_id){ //fetch specific employee by id
         return employeeRepository.findById(employee_id).get();
     }
 
-    public Employee getEmployeeByName(String firstName, String lastName){
+    public Employee getEmployeeByName(String firstName, String lastName){ //fetch employee by first+last name
         return employeeRepository.findByFirstNameAndLastName(firstName, lastName);
     }
 
-    public Employee updateEmployeePhoneNumber(Employee selectedEmp, String phoneNumber){
+    public Employee updateEmployeePhoneNumber(Employee selectedEmp, String phoneNumber){ //update employee phone num
         selectedEmp.setPhoneNumber(phoneNumber);
         return employeeRepository.save(selectedEmp);
     }
@@ -41,5 +40,13 @@ public class EmployeeService {
     public Employee updateEmployeeSalary(Employee selectedEmployee, int newSalary){
         selectedEmployee.setSalary(newSalary);
         return employeeRepository.save(selectedEmployee);
+    }
+
+    public Employee createEmployee(Employee employee){
+        return employeeRepository.save(employee);
+    }
+
+    public Employee updateEmployee(Employee employee){
+        return employeeRepository.save(employee);
     }
 }
