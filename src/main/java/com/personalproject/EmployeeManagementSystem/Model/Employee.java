@@ -48,6 +48,17 @@ public class Employee {
         this.firstName = firstName;
     }
 
+    public Employee(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Employee(int employeeId, String firstName, String lastName){
+        this.employeeId = employeeId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     //getters and setters
     public int getEmployeeId() {
         return this.employeeId;
