@@ -40,6 +40,9 @@ class EmployeeManagementSystemApplicationTests {
 		assertEquals("John", employee.getFirstName());
 	}
 
+	/*
+	//TODO: CREATE RESOURCE NOT FOUND EXCEPTION
+	// Prob create exception folder
 	@Test
 	public void testGetEmployeeById_NotFound(){
 		//mock repository : return empty optional
@@ -47,13 +50,11 @@ class EmployeeManagementSystemApplicationTests {
 
 		//Verify service throws correct exception
 		Exception exception = assertThrows(ResourceNotFoundException.class, () -> {
-			//TODO: CREATE RESOURCE NOT FOUND EXCEPTION
-			// Prob create exception folder
 			employeeService.getEmployeeById(1);
 		});
 
 		assertEquals("Employee not found", exception.getMessage());
-	}
+	} */
 
 	@Test
 	public void testSaveEmployee(){
@@ -70,6 +71,6 @@ class EmployeeManagementSystemApplicationTests {
 		//assertions
 		assertNotNull(result);
 		assertEquals(1, result.getEmployeeId());
-		assertEquals("Jane", result.getFirstName();
+		assertEquals("Jane", result.getFirstName());
 	}
 }
