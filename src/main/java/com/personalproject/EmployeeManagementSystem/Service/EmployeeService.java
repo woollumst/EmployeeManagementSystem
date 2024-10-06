@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.personalproject.EmployeeManagementSystem.Model.*;
 import com.personalproject.EmployeeManagementSystem.Repository.EmployeeRepository;
+import com.personalproject.Exceptions.ResourceNotFoundException;
 
 @Service
 public class EmployeeService {
@@ -25,7 +26,7 @@ public class EmployeeService {
     }
 
     public Employee getEmployeeById(int employee_id){ //fetch specific employee by id
-        return employeeRepository.findById(employee_id).get();
+        return employeeRepository.findById(employee_id).orElseThrow(() -> new ResourceNotFoundException("Employee not found"));
     }
 
     public Employee getEmployeeByName(String firstName, String lastName){ //fetch employee by first+last name

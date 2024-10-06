@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.personalproject.EmployeeManagementSystem.Model.Employee;
 import com.personalproject.EmployeeManagementSystem.Repository.EmployeeRepository;
 import com.personalproject.EmployeeManagementSystem.Service.EmployeeService;
+import com.personalproject.Exceptions.*;
 
 @SpringBootTest
 class EmployeeManagementSystemApplicationTests {
@@ -40,7 +41,7 @@ class EmployeeManagementSystemApplicationTests {
 		assertEquals("John", employee.getFirstName());
 	}
 
-	/*
+	
 	//TODO: CREATE RESOURCE NOT FOUND EXCEPTION
 	// Prob create exception folder
 	@Test
@@ -54,7 +55,7 @@ class EmployeeManagementSystemApplicationTests {
 		});
 
 		assertEquals("Employee not found", exception.getMessage());
-	} */
+	} 
 
 	@Test
 	public void testSaveEmployee(){
