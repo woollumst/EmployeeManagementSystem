@@ -48,8 +48,27 @@ public class EmployeeController {
         return employeeService.updateEmployee(employee);
     }
 
+    //PatchMapping for employee/id ?
+
+
     @DeleteMapping("/Employee/{id}")
     public @ResponseBody Employee deleteEmployee(@PathVariable int employeeId){
         return employeeService.deleteEmployee(employeeId);
     }
+
+    //Departments
+    //POST, GET, DELETE Departments
+
+    //Position
+    //PUT /employee/{id}/position
+    //updates employee's position maybe?
+
+    //GET /employee/search    ie: search?name=John&department=IT
+
+    //GET /manager/{id}/employees 
+    //return all employees that report to manager
+
+    //PUT /employee/{id}/salary
+
+    
 }
