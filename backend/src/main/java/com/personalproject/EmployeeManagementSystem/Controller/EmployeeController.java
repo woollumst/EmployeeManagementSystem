@@ -49,6 +49,11 @@ public class EmployeeController {
     }
 
     //PatchMapping for employee/id ?
+    @PatchMapping("Employee/{id}")
+    public @ResponseBody Employee patchEmployee(@PathVariable int employeeId, @RequestBody Employee employee) {
+        employee.setEmployeeId(employeeId);
+        return employeeService.patchEmployee(employee);
+    }
 
 
     @DeleteMapping("/Employee/{id}")

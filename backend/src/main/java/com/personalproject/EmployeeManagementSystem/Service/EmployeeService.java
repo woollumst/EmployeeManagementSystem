@@ -51,6 +51,10 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
+    public Employee patchEmployee(Employee employee){
+        return employeeRepository.save(employee);
+    }
+
     public Employee deleteEmployee(int employeeId){
         Employee delEmployee = getEmployeeById(employeeId);
         employeeRepository.deleteById(employeeId);
