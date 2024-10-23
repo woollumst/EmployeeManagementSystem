@@ -55,7 +55,6 @@ public class EmployeeController {
         return employeeService.patchEmployee(employee);
     }
 
-
     @DeleteMapping("/Employee/{id}")
     public @ResponseBody Employee deleteEmployee(@PathVariable int employeeId){
         return employeeService.deleteEmployee(employeeId);
@@ -63,6 +62,8 @@ public class EmployeeController {
 
     //Departments
     //POST, GET, DELETE Departments
+    
+    //do i want to add departments?
 
     //Position
     //PUT /employee/{id}/position
