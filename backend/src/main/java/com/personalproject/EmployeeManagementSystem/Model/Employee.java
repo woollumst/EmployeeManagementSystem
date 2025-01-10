@@ -11,20 +11,13 @@ public class Employee {
     @Id
     private int employeeId;
     @NotBlank(message = "Employee must have a name")
-    private String firstName;
-    private String lastName;
-    @Email(message = "Email should be valid")
-    private String email;
+    private String name;
     @Pattern(regexp = "^\\+?[0-9]{10,15}$", message = "Phone number must be valid")
     private String phoneNumber;
-    private String position;
     private String department;
-    private LocalDate hireDate;
-    private LocalDate birthDate;
     private double salary;
     private String address;
-    private String status;
-    private int managerId;
+//trimmed fields, need update functions
 
     //Constructors
     public Employee(int employeeId, String firstName, String lastName, String email, String phoneNumber, String position, String department, LocalDate hireDate, LocalDate birthDate, double salary, String address, String status, int managerId){
