@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 //import './App.css';
 import EmployeeList from './EmployeeList.js';
+import EmployeeItem from './EmployeeItem.js';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function Home() { 
@@ -19,7 +20,8 @@ function Dashboard() {
           </nav>
           <Switch>
             <Route path="/Employee" component={EmployeeList} />
-            <Route path ="/" exact component={Home} />
+            <Route path="/" exact component={Home} />
+            <Route path="/Employee/:id" component={EmployeeItem} />
           </Switch>
         </div>
     );
