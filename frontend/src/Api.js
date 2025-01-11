@@ -33,6 +33,15 @@ export const deleteEmployee = async (id) => {
   }
 };
 
+// Get an employee by ID ?do i need this?
+export const getEmployee = async (id) => {
+  const response = await fetch('${API_URL}/${id}');
+  if (!response.ok) {
+    throw new Error(`Failed to get employee: ${response.statusText}`);
+  }
+  return response.json();
+}
+
 // Update an employee by ID
 export const updateEmployee = async (id, employee) => {
   const response = await fetch(`${API_URL}/${id}`, {
