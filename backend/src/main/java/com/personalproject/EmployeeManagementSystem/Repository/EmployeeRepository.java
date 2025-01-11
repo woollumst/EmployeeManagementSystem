@@ -6,5 +6,5 @@ import com.personalproject.EmployeeManagementSystem.Model.*;
 
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
-    public Employee findByFirstNameAndLastName(String firstName, String lastName);
+    public Employee findByName(String name);
 }
