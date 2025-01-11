@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <h1>Employee Management System</h1>
       //components?
-    <EmployeeList />
+      <EmployeeList />
     </div>
   );
 }
