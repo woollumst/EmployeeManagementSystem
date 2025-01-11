@@ -20,6 +20,8 @@ function EmployeeList() {
         ))}
       </ul>
     </div>
+    //want to add link to employee items. potential solution?
+    // <li key={emp.id}><Link to="/Employee/{emp.id}">{emp.name}</Link></li>
   );
 }
 
