@@ -1,6 +1,8 @@
 import {getEmployee} from './Api.js';
+import { useParams } from 'react-router-dom';
 
-function EmployeeItem({employeeID}) {
+function EmployeeItem() {
+  const { employeeID } = useParams();
   return (
     {id, name, phone, salary, address} = getEmployee({employeeID});
     <div>
