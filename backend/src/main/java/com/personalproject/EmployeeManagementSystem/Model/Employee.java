@@ -14,43 +14,40 @@ public class Employee {
     private String name;
     @Pattern(regexp = "^\\+?[0-9]{10,15}$", message = "Phone number must be valid")
     private String phoneNumber;
+    @NotBlank(message = "Employee must have a department")
     private String department;
+    @NotBlank(message = "Employee must have a salary")
     private double salary;
     private String address;
-//trimmed fields, need update functions
 
     //Constructors
-    public Employee(int employeeId, String firstName, String lastName, String email, String phoneNumber, String position, String department, LocalDate hireDate, LocalDate birthDate, double salary, String address, String status, int managerId){
+    public Employee(int employeeId, String name, String phoneNumber, String department, double salary, String address){
         this.employeeId = employeeId;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        this.name = name;
         this.phoneNumber = phoneNumber;
-        this.position = position;
         this.department = department;
-        this.hireDate = hireDate;
-        this.birthDate = birthDate;
         this.salary = salary;
         this.address = address;
-        this.status = status;
-        this.managerId = managerId;
     }
 
-    public Employee(int employeeId, String firstName){
+    public Employee(int employeeId, String name, String phoneNumber, String department, double salary){
         this.employeeId = employeeId;
-        this.firstName = firstName;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.department = department;
+        this.salary = salary;
     }
 
-    public Employee(String firstName, String lastName){
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    public Employee(int employeeId, String firstName, String lastName){
+    public Employee(int employeeId, String name){
         this.employeeId = employeeId;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
     }
+
+    public Employee(String name){
+        this.name = name;
+    }
+
+
 
     //getters and setters
     public int getEmployeeId() {
@@ -61,28 +58,12 @@ public class Employee {
         this.employeeId = employeeId;
     }
 
-    public String getFirstName() {
-        return this.firstName;
+    public String getName() {
+        return this.name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setName(String name) {
+        this.name = name;
     }
     
     public String getPhoneNumber() {
@@ -93,36 +74,12 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getPosition() {
-        return this.position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
     public String getDepartment() {
         return this.department;
     }
 
     public void setDepartment(String department) {
         this.department = department;
-    }
-
-    public LocalDate getHireDate() {
-        return this.hireDate;
-    }
-
-    public void setHireDate(LocalDate hireDate) {
-        this.hireDate = hireDate;
-    }
-
-    public LocalDate getBirthDate() {
-        return this.birthDate;
-    }
-
-    public void setBirthDate(LocalDate birthDate) {
-        this.birthDate = birthDate;
     }
 
     public double getSalary() {
@@ -139,21 +96,5 @@ public class Employee {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getStatus() {
-        return this.status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public int getManagerId() {
-        return this.managerId;
-    }
-
-    public void setManagerId(int managerId) {
-        this.managerId = managerId;
     }
 }
