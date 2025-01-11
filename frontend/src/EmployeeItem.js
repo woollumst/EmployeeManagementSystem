@@ -1,8 +1,8 @@
-function EmployeeItem({ employee, onDelete }) {
+import { ? } from './Api.js';
+
+function EmployeeItem() {
   return (
-    <li> //Unfinished
-      {employee.name} <button onClick={() => onDelete(employee.id)}>Delete</button>
-    </li>
+    
   );
 }
 
