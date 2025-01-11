@@ -7,3 +7,43 @@ export const fetchEmployees = async () => {
   }
   return response.json();
 };
+
+// Add a new employee
+export const addEmployee = async (employee) => {
+  const response = await fetch(`${API_URL}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(employee),
+  });
+  if (!response.ok) {
+    throw new Error(`Failed to add employee: ${response.statusText}`);
+  }
+  return response.json();
+};
+
+// Delete an employee by ID
+export const deleteEmployee = async (id) => {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "DELETE",
+  });
+  if (!response.ok) {
+    throw new Error(`Failed to delete employee: ${response.statusText}`);
+  }
+};
+
+// Update an employee by ID
+export const updateEmployee = async (id, employee) => {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(employee),
+  });
+  if (!response.ok) {
+    throw new Error(`Failed to update employee: ${response.statusText}`);
+  }
+  return response.json();
+};
