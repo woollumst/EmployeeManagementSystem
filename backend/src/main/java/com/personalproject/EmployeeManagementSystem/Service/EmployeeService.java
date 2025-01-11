@@ -29,8 +29,8 @@ public class EmployeeService {
         return employeeRepository.findById(employee_id).orElseThrow(() -> new ResourceNotFoundException("Employee not found"));
     }
 
-    public Employee getEmployeeByName(String firstName, String lastName){ //fetch employee by first+last name
-        return employeeRepository.findByFirstNameAndLastName(firstName, lastName);
+    public Employee getEmployeeByName(String name){ //fetch employee by name
+        return employeeRepository.findByName(name);
     }
 
     public Employee updateEmployeePhoneNumber(Employee selectedEmp, String phoneNumber){ //update employee phone num
