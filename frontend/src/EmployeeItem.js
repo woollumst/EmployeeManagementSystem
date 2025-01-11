@@ -1,4 +1,4 @@
-import { ? } from './Api.js';
+import {getEmployee} from './Api.js';
 
 function EmployeeItem() {
   return (
