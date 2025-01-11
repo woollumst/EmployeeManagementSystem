@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function EmployeeList() {
-  const [employees, setEmployees] = useState([
-    { id: 1, name: 'John Doe' },
-    { id: 2, name: 'Jane Smith' },
-  ]);
+  const [employees, setEmployees] = useState([]);
+
+  // Fetch employees when the component loads
+  useEffect(() => {
+    fetch('localhost:8080/employee') // Java Spring API URL??
+      .then((response) => response.json())
+      .then((data) => setEmployees(data))
+      .catch((error) => console.error('Error fetching employees:', error));
+  }, []); // Empty dependency array = runs only once
 
   return (
     <div>
