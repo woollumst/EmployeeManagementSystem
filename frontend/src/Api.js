@@ -1,5 +1,7 @@
 const API_URL = "http://localhost:8080/Employee";
 
+// Rework? perhaps add login landing page and authentication etc
+
 export const fetchEmployees = async () => {
   const response = await fetch('${API_URL}');
   if (!response.ok) {
